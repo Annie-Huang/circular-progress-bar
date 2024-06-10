@@ -34,6 +34,9 @@
   display: grid;
   place-items: center; /* cannot use place-content as it got the <span> inside as well */
 
+  /* this works thanks to the @property at the top */
+  transition: --progress 500ms linear;
+
   &::after {
     content: attr(aria-valuenow) '%';
     /* You can comment out to see the conic-gradient effect of the outer circle */
