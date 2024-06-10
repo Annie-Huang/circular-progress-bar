@@ -14,7 +14,7 @@ function enableProgessBar() {
 enableProgessBar();
 
 // for simulating stuff when we click the buttons
-const testingGround = document.querySelector('.testing-ground');
+/*const testingGround = document.querySelector('.testing-ground');
 
 testingGround.addEventListener('click', (e) => {
   if (!e.target.closest('button')) return;
@@ -23,4 +23,47 @@ testingGround.addEventListener('click', (e) => {
   console.log(progress);
   progressbar.setAttribute('aria-valuenow', progress);
   progressbar.style.setProperty('--progress', progress + '%');
+});*/
+
+// for simulating stuff when we click the buttons
+const testingGround = document.querySelector('.testing-ground');
+let interval = null;
+
+function simulateProgress(newProgressValue) {
+  clearInterval(interval);
+  if (newProgressValue === 'fake-upload') {
+    simulateUpload();
+  } else {
+    updateProgress(newProgressValue);
+  }
+}
+
+testingGround.addEventListener('click', (e) => {
+  if (!e.target.closest('button')) return;
+
+  progress = e.target.dataset.progress;
+  simulateProgress(progress);
 });
+
+function updateProgress(progress) {
+  progressbar.setAttribute('aria-valuenow', progress);
+  progressbar.style.setProperty('--progress', progress + '%');
+}
+
+function simulateUpload() {
+  // aria-busy prevents it from announcing every change as it keeps updating the progress
+  // make sure to set it false once the progress is finished
+  progressbar.setAttribute('aria-busy', 'true');
+  let progress = 0;
+  updateProgress(progress);
+
+  const intervalTimer = setInterval(() => {
+    progress += 5;
+    updateProgress(progress);
+    if (progress === 100) {
+      // probably want something to catch errors and also have this set to false then too
+      progressbar.setAttribute('aria-busy', 'false');
+      clearInterval(intervalTimer);
+    }
+  }, 500);
+}
