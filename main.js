@@ -6,4 +6,8 @@ function enableProgessBar() {
   /* and having that removes the no-js message */
   /* min of 0 and max of 100 are defaults, so we don't need aria-valuemin or -valuemax */
   progressbar.setAttribute('role', 'progressbar');
+  progressbar.setAttribute('aria-valuenow', 0);
+  progressbar.setAttribute('aria-live', 'polite');
 }
+
+enableProgessBar();
