@@ -1,3 +1,8 @@
+/* If js is disabled */
+.progressbar:not([role='progressbar']) {
+  color: red;
+}
+
 @layer general-styling-and-whatnot {
   :root {
     --font-base: 'Space Mono', monospace;
