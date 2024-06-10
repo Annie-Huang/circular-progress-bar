@@ -22,4 +22,5 @@ testingGround.addEventListener('click', (e) => {
   progress = e.target.dataset.progress;
   console.log(progress);
   progressbar.setAttribute('aria-valuenow', progress);
+  progressbar.style.setProperty('--progress', progress + '%');
 });

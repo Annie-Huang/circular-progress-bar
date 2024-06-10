@@ -9,7 +9,14 @@
 
   /*background: blue;*/
   /* It means it start at 0%, then ends in 82% for the first value, the second value start from 82%+0%, and ends at 100% */
-  background: conic-gradient(var(--color-dark) 82%, var(--color-dark-glare) 0);
+  /*background: conic-gradient(var(--color-dark) 82%, var(--color-dark-glare) 0%);*/
+  /* This syntax does not work yet. */
+  /*background: conic-gradient(var(--color-dark) attr(aria-valuenow), var(--color-dark-glare) 0%);*/
+  background: conic-gradient(
+    var(--color-dark) var(--progress, 0),
+    var(--color-dark-glare) 0%
+  );
+
   margin: 2rem auto;
   border-radius: 50%;
 
