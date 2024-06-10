@@ -1,0 +1,6 @@
+Create an animated, circular progress bar (https://www.youtube.com/watch?v=MXWP56LUI3g)
+
+https://codepen.io/kevinpowell/pen/YzgmRLo
+https://github.com/Annie-Huang/circular-progress-bar
+
+-----------------------------------------------------------------------
