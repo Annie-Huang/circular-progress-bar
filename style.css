@@ -1,3 +1,14 @@
+/* let's us animate the custom prop */
+/* if @property isn't supported, everything works, just without the animation */
+/* @property is currently support in chrome and safari, but not in firefox (10/06/2024)
+   Define it as a length-percentage allow us to do animation.
+*/
+@property --progress {
+  syntax: '<length-percentage>';
+  inherits: false;
+  initial-value: 0%;
+}
+
 /* If JS is enabled */
 [role='progressbar'] {
   --size: 132px;
@@ -12,7 +23,7 @@
   /*background: conic-gradient(var(--color-dark) 82%, var(--color-dark-glare) 0%);*/
   /* This syntax does not work yet. */
   /*background: conic-gradient(var(--color-dark) attr(aria-valuenow), var(--color-dark-glare) 0%);*/
-  background: conic-gradient(
+  background-image: conic-gradient(
     var(--color-dark) var(--progress, 0),
     var(--color-dark-glare) 0%
   );
