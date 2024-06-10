@@ -3,4 +3,5 @@ Create an animated, circular progress bar (https://www.youtube.com/watch?v=MXWP5
 https://codepen.io/kevinpowell/pen/YzgmRLo
 https://github.com/Annie-Huang/circular-progress-bar
 
+https://piccalil.li/blog/challenge-009-progress-indicator/
 -----------------------------------------------------------------------
