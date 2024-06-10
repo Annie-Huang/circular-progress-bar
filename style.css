@@ -4,10 +4,20 @@
   --bar-width: 20px;
 
   width: var(--size);
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 1;
 
   background: blue;
   border-radius: 50%;
+
+  &::after {
+    content: '';
+    background: white;
+    border-radius: inherit;
+    width: calc(100% - var(--bar-width));
+    aspect-ratio: 1;
+
+    display: grid;
+  }
 
   span {
     display: none;
