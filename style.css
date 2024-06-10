@@ -1,5 +1,14 @@
 /* If JS is enabled */
 [role='progressbar'] {
+  --size: 132px;
+  --bar-width: 20px;
+
+  width: var(--size);
+  aspect-ratio: 1 / 1;
+
+  background: blue;
+  border-radius: 50%;
+
   span {
     display: none;
   }
