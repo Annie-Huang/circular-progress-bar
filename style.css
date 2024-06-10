@@ -39,6 +39,12 @@
     display: none;
   }
 }
+
+[role='progressbar'][aria-valuenow='100']::after {
+  content: 'YAY';
+  background-color: var(--color-success);
+}
+
 /* If JS is disabled */
 .progressbar:not([role='progressbar']) {
   color: red;
