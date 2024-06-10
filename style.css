@@ -1,4 +1,10 @@
-/* If js is disabled */
+/* If JS is enabled */
+[role='progressbar'] {
+  span {
+    display: none;
+  }
+}
+/* If JS is disabled */
 .progressbar:not([role='progressbar']) {
   color: red;
 }
