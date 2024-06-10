@@ -7,7 +7,9 @@
   width: var(--size);
   aspect-ratio: 1;
 
-  background: blue;
+  /*background: blue;*/
+  /* It means it start at 0%, then ends in 82% for the first value, the second value start from 82%+0%, and ends at 100% */
+  background: conic-gradient(var(--color-dark) 82%, var(--color-dark-glare) 0);
   margin: 2rem auto;
   border-radius: 50%;
 
@@ -16,6 +18,7 @@
 
   &::after {
     content: attr(aria-valuenow) '%';
+    /* You can comment out to see the conic-gradient effect of the outer circle */
     background: white;
     border-radius: inherit;
     width: calc(100% - var(--bar-width));
